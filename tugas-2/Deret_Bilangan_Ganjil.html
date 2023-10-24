@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deret Bilangan Ganjil</title>
+</head>
+
+<body>
+    <h1 id="judul">Deret Bilangan Ganjil</h1>
+    <tr>
+        <td>Masukkan Nilai N</td>
+        <td>:</td>
+        <td>
+            <input type="number" id="angka" placeholder="">
+        </td>
+        <td>
+            <button onclick="deretGanjil()">Tampilkan</button>
+        </td>
+    <tr>
+        <td>
+            <p id="hasil"></p>
+        </td>
+    </tr>
+
+    </tr>
+
+    <script>
+        function deretGanjil() {
+            const inputN = document.getElementById("angka").value;
+            const hasil = document.getElementById("hasil");
+
+            if (isNaN(inputN)) {
+                hasil.innerHTML = "Input bukan bilangan.";
+            } else {
+                const N = parseInt(inputN);
+                let deretGanjil = "";
+
+                for (let i = 1; i <= N; i++) {
+                    if (i % 2 !== 0) {
+                        if (deretGanjil !== "") {
+                            deretGanjil += " ";
+                        }
+                        deretGanjil += i;
+                    }
+                }
+
+                hasil.innerHTML = "Deret bilangan ganjil hingga " + N + " adalah: " + deretGanjil;
+            }
+        }
+    </script>
+</body>
+
+</html>

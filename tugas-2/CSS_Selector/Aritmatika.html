@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar CSS Selector</title>
+    <link rel="stylesheet" href="CSS_selectors.css">
+</head>
+
+<body>
+    <h1 id="judul">
+        Ini Judul (Menggunakan id)
+    </h1>
+    <h2 class="sub-judul">
+        Ini Sub Judul (Menggunakan Class)
+    </h2>
+    <table class="styled-table">
+        <tr>
+            <td>Angka 1</td>
+            <td>:</td>
+            <td><input id="angka1" placeholder="Angka 1"></td>
+        </tr>
+
+        <tr>
+            <td>Angka 2</td>
+            <td>:</td>
+            <td><input id="angka2" placeholder="Angka 2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>:</td>
+            <td>
+                <button onclick="tambah()">+</button>&nbsp;
+                <button onclick="kurang()">-</button>&nbsp;
+                <button onclick="kali()">*</button>&nbsp;
+                <button onclick="bagi()">/</button>&nbsp;
+                <button onclick="hasilBagi()">%</button>&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>Hasil</td>
+            <td>:</td>
+            <td align="center">
+                <label for="Hasil" id="hasil">
+                    <font style="font-size: 24pt; font-weight: bold;">
+                        0</font>
+                </label>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function tambah() {
+            let a1 = Number(document.getElementById("angka1").value);
+            let a2 = Number(document.getElementById("angka2").value);
+            let hasil = a1 + a2;
+            let s = document.getElementById("hasil")
+            s.innerHTML = hasil;
+            s.style.fontWeight = "bold";
+            s.style.fontSize = "24pt";
+        }
+        function kurang() {
+            let a1 = Number(document.getElementById("angka1").value);
+            let a2 = Number(document.getElementById("angka2").value);
+            let hasil = a1 - a2;
+            let s = document.getElementById("hasil");
+            s.innerHTML = hasil;
+            s.style.fontWeight = "bold";
+            s.style.fontSize = "24pt";
+        }
+        function kali() {
+            let a1 = Number(document.getElementById("angka1").value);
+            let a2 = Number(document.getElementById("angka2").value);
+            let hasil = a1 * a2;
+            let s = document.getElementById("hasil");
+            s.innerHTML = hasil;
+            s.style.fontWeight = "bold";
+            s.style.fontSize = "24pt";
+        }
+        function bagi() {
+            let a1 = Number(document.getElementById("angka1").value);
+            let a2 = Number(document.getElementById("angka2").value);
+            if (a2 !== 0) {
+                let hasil = a1 / a2;
+                let s = document.getElementById("hasil");
+                s.innerHTML = hasil;
+                s.style.fontWeight = "bold";
+                s.style.fontSize = "24pt";
+            } else {
+                alert("Tidak dapat membagi dengan nol.");
+            }
+        }
+        function hasilBagi() {
+            let a1 = Number(document.getElementById("angka1").value);
+            let a2 = Number(document.getElementById("angka2").value);
+            if (a2 !== 0) {
+                let hasil = a1 % a2;
+                let s = document.getElementById("hasil");
+                s.innerHTML = hasil;
+                s.style.fontWeight = "bold";
+                s.style.fontSize = "24pt";
+            } else {
+                alert("Tidak dapat menghitung modulus dengan nol.");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+#judul {
+    text-align: center;
+    color: blueviolet;
+}
+
+.sub-judul {
+    text-align: center;
+    color: greenyellow;
+    /* background-color: rgb(3, 171, 171); */
+    background: black;
+}
+
+/* CSS selectors untuk mengatur konten */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.header {
+    align-self: flex-start;
+}
+
+/* CSS selectors untuk mengatur tabel */
+.styled-table {
+    border: dotted;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.styled-table tr td {
+    padding: 5px;
+}

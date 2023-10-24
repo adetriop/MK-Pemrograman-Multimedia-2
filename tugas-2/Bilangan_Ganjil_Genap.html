@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilangan Genap Atau Ganjil</title>
+</head>
+
+<body>
+    <table>
+        <h1 id="judul">Cek Bilangan Genap/Ganjil</h1>
+        <tr>
+            <td>Masukkan Bilangan Bulat</td>
+            <td>:</td>
+            <td>
+                <input type="text" id="bilangan" placeholder="">
+            </td>
+            <td>
+                <button onclick="cekBilangan()">Cek</button>
+            </td>
+        <tr>
+            <td>
+                <p id="hasil"></p>
+            </td>
+        </tr>
+
+        </tr>
+    </table>
+
+
+    <script>
+        function cekBilangan() {
+            const inputBilangan = document.getElementById("bilangan").value;
+            const hasil = document.getElementById("hasil");
+
+            if (isNaN(inputBilangan)) {
+                hasil.innerHTML = "Input bukan bilangan bulat.";
+            } else {
+                const bilangan = parseInt(inputBilangan);
+
+                if (bilangan % 2 === 0) {
+                    hasil.innerHTML = "Bilangan " + bilangan + " adalah genap.";
+                } else {
+                    hasil.innerHTML = "Bilangan " + bilangan + " adalah ganjil.";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

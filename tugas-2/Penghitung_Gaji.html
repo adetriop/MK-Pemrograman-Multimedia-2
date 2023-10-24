@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gaji Bersih</title>
+</head>
+
+<body>
+    <h1>Kalkulator Gaji Bersih Karyawan</h1>
+    <table style="border: dotted;" cellpadding="7">
+        <tr>
+            <td>Nama Karyawan</td>
+            <td>:</td>
+            <td><input type="text" id="nama" placeholder="Masukkan Nama Karyawan"></td>
+        </tr>
+        <tr>
+            <td>Gaji Pokok Bulanan</td>
+            <td>:</td>
+            <td><input type="text" id="gaji" placeholder="Masukkan Gaji Pokok"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>:</td>
+            <td><button onclick="hitungGaji()">Hitung Gaji Bersih</button></td>
+        </tr>
+        <tr>
+            <th>Hasil</th>
+            <th>:</th>
+            <td>
+                <p id="hasil"></p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function hitungGaji() {
+            const namaKaryawan = document.getElementById("nama").value;
+            const gajiPokok = parseFloat(document.getElementById("gaji").value);
+
+            // tunjangan adalah 20% dari gaji pokok dan pajak adalah 15% dari gaji pokok
+            const tunjangan = 0.2 * gajiPokok;
+            const pajak = 0.15 * gajiPokok;
+
+            const gajiBersih = gajiPokok - (tunjangan + pajak);
+
+            const hasilText = `${namaKaryawan}<br>Rp ${gajiBersih}`;
+            document.getElementById("hasil").innerHTML = hasilText;
+        }
+    </script>
+</body>
+
+</html>
